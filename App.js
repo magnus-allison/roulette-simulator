@@ -1,6 +1,7 @@
 import RouletteWheel from './RouletteWheel.js';
 import Board from './Board.js';
 import HistoryList from './HistoryList.js';
+import Stats from './Stats.js';
 
 class App {
 	constructor() {
@@ -14,14 +15,10 @@ class App {
 		this.RouletteWheel = new RouletteWheel(this.canvas.width / 2, this.canvas.height / 2, this.ctx);
 		this.Board = new Board('#board__numbers');
 		this.HistoryList = new HistoryList('#history-list');
+		this.Stats = new Stats();
 	}
 
 	init() {
-		this.RouletteWheel.image.onload = () => {
-			this.RouletteWheel.randomRotation();
-			this.RouletteWheel.rotate(this.RouletteWheel.endRotation);
-			this.RouletteWheel.draw();
-		};
 		this.Board.render();
 	}
 
@@ -48,7 +45,7 @@ class App {
 
 		this.HistoryList.push({
 			winning: winningNumber,
-			guessed: this.Board.guessedNumbers
+			guessed: [...this.Board.guessedNumbers]
 		});
 
 		if (this.Board.guessedNumbers.includes(winningNumber)) {

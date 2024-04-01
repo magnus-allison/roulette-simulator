@@ -4,6 +4,7 @@ class BoardItem {
 		this.color = color;
 		this.DOMNode = null;
 	}
+
 	render() {
 		const item = document.createElement('div');
 		item.classList.add('number__item');
@@ -13,6 +14,7 @@ class BoardItem {
 		this.DOMNode = item;
 		return item;
 	}
+
 	select(selected) {
 		if (!this.DOMNode) throw new Error('Item not rendered');
 		this.DOMNode.style.backgroundColor = selected ? '#CFF70F' : this.color;
