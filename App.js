@@ -52,13 +52,15 @@ class App {
 			alert('You win!');
 		}
 		this.elapsedTime = 0;
+		this.Board.unfreeze();
 	}
 
 	spin() {
 		if (this.Board.guessedNumbers.length === 0) {
-			alert('Please select a number');
+			// alert('Please select a number');
 			return;
 		}
+		this.Board.freeze();
 		this.RouletteWheel.randomRotation();
 		this.animate();
 	}

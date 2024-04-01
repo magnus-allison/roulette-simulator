@@ -1,9 +1,12 @@
 import BoardItem from './BoardItem.js';
 
 class Board {
+	#frozen;
+
 	constructor(el) {
 		this.DOMNode = document.querySelector(el);
 		this.guessedNumbers = [];
+		this.#frozen = false;
 	}
 
 	render() {
@@ -20,6 +23,7 @@ class Board {
 			this.DOMNode.appendChild(item.render());
 
 			item.DOMNode.addEventListener('click', () => {
+				if (this.#frozen) return;
 				if (this.guessedNumbers.includes(i)) {
 					this.guessedNumbers = this.guessedNumbers.filter((number) => number !== i);
 					item.select(false);
@@ -29,6 +33,14 @@ class Board {
 				item.select(true);
 			});
 		}
+	}
+
+	freeze() {
+		this.#frozen = true;
+	}
+
+	unfreeze() {
+		this.#frozen = false;
 	}
 }
 
