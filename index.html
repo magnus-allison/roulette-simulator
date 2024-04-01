@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Roulette</h1>
+		</header>
+		<div class="game">
+			<div id="game__card">
+				<canvas id="canvas" width="280" height="210"></canvas>
+				<button class="spin-button">Spin The Wheel</button>
+			</div>
+			<div id="game__board">
+				<div id="board__zero">0</div>
+				<div id="board__numbers"></div>
+				<div id="board__rows"></div>
+			</div>
+		</div>
+		<div id="history-list"></div>
+	</body>
+	<script src="script.js" type="module"></script>
+</html>
