@@ -1,6 +1,6 @@
 class RouletteWheel {
-	#width = 220;
-	#height = 220;
+	#width = 241;
+	#height = 241;
 	#x;
 	#y;
 

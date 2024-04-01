@@ -14,20 +14,25 @@
 	</head>
 	<body>
 		<header>
-			<h1>Roulette</h1>
+			<!-- <h1>Roulette</h1> -->
 		</header>
 		<div class="game">
 			<div id="game__card">
-				<canvas id="canvas" width="280" height="210"></canvas>
+				<canvas id="canvas" width="255" height="240"></canvas>
 				<button class="spin-button">Spin The Wheel</button>
 			</div>
-			<div id="game__board">
-				<div id="board__zero">0</div>
-				<div id="board__numbers"></div>
-				<div id="board__rows">
-					<div class="rows__row">2:1</div>
-					<div class="rows__row">2:1</div>
-					<div class="rows__row">2:1</div>
+			<div id="game_area">
+				<div id="game__board">
+					<div id="board__zero">0</div>
+					<div id="board__numbers"></div>
+					<div id="board__rows">
+						<div class="rows__row">2:1</div>
+						<div class="rows__row">2:1</div>
+						<div class="rows__row">2:1</div>
+					</div>
+				</div>
+				<div id="game__board">
+					<div id="game__board" style="flex-direction: column"></div>
 				</div>
 			</div>
 		</div>
